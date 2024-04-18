@@ -1,0 +1,88 @@
+.Profile{
+    display: flex;
+
+}
+.profileright{
+flex: 9;
+}
+
+.profilerighbottom{
+display: flex;
+margin-top: 70px;
+}
+
+.coverpicture{
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+.profilepitcure{
+    width: 209px;
+    height: 200px;
+    object-fit: cover;
+    position: absolute;
+    /* left: 0; */
+    right: 0;
+    margin: auto;
+    border-radius: 50%;
+    top: 190px;
+    border: 3px solid rgb(255, 255, 255);
+    margin-right: 460px;
+}
+.profileinfo{
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+margin-top: 90px;
+}
+.updateButton{
+    display: flex;
+    align-items: center;
+    background-color: #1877F2;
+    border: none;
+    padding: 5px ;
+    color: white;
+    border-radius: 5px;
+    gap: 4px;
+    cursor: pointer;
+    margin: 0 auto;
+}
+.updateButton:focus{
+    outline: none;
+}
+.updateProfile{
+    background-color: #1877F2;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    color: white;
+    cursor: pointer;
+}
+.updateInputbar{
+    height: 30px;
+    border: 1px solid rgb(221, 220, 220);
+    padding: 0 10px;
+    border-radius: 5px;
+}
+.updateInputbar:focus{
+    outline: none;
+}
+.progressBar{
+    width: 25px !important;
+    height: 25px !important;
+}
+.updateInputbar:hover{
+    border: 1px solid #1877F2;
+}
+.updateInputbar2{
+    height: 30px;
+    border: 1px solid rgb(221, 220, 220);
+    padding: 0 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.updateInputbar2:hover{
+    border: 1px solid #1877F2;
+    color: #1877F2;
+}

@@ -1,0 +1,44 @@
+.login{
+    width: 80vw;
+    height: 100vh;
+    display: flex;
+margin: 0 auto;
+margin-top: 15%;
+}
+.loginwrapper{
+display: flex;
+flex-direction: row;
+justify-content: space-between ;
+margin: 0 auto;
+}
+.loginright{
+    margin-right: 300px;
+}
+.vigi{
+    font-weight: 900;
+    font-size: 60px;
+color:#1877f2;
+
+}
+.loginleft{
+    margin-top: -100px;
+    height: 410px;
+    width: 410px;
+    -webkit-box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.37); 
+    box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.37);
+    border-radius: 20px;
+}
+.loginbox{
+   align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+.email{
+    border: 1px solid grey;
+    border-radius: 10px;
+    margin: 0 auto;
+    height: 50px;
+    width: 400px
+}:focus{
+    outline: none;
+}

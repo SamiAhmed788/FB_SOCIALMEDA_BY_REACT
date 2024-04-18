@@ -1,0 +1,44 @@
+.Register{
+    width: 80vw;
+    height: 100vh;
+    display: flex;
+margin: 0 auto;
+margin-top: 15%;
+}
+.Registerwrapper{
+display: flex;
+flex-direction: row;
+justify-content: space-between ;
+margin: 0 auto;
+}
+.Registerright{
+    margin-right: 300px;
+}
+.Vigi{
+    font-weight: 900;
+    font-size: 60px;
+color:#1877f2;
+}
+.Registerleft{
+    margin-top: -100px;
+    height: 510px;
+    width: 420px;
+    -webkit-box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.37); 
+    box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.37);
+    border-radius: 20px;
+
+}
+.Registerbox{
+   align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+.email{
+    border: 1px solid grey;
+    border-radius: 15px;
+    margin: 0 auto;
+    height: 50px;
+    width: 380px
+}:focus{
+    outline: none;
+}

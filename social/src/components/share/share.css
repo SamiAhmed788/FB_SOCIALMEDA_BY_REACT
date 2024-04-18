@@ -1,0 +1,66 @@
+.share{
+    width: 100%;
+    height: 190px;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.37); 
+box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.37);
+}
+.sharewrapper{
+padding: 10px;
+}
+.shareprofile{
+width: 50px;
+height: 50px;
+border-radius: 50%;
+object-fit: cover;
+margin-right: 10px;
+}
+.shareTop{
+display: flex;
+align-items: center;
+}
+.shareinput{
+border: none;
+width: 80%;
+}:focus{
+    outline: none;
+}
+.sharebottom{
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+.shareoptions{
+display: flex;
+}
+.shareoption{
+display: flex;
+align-items: center;
+margin-right: 15px;
+cursor: pointer;
+margin-top: 10px;
+}
+.shareicon{
+font-size: 18px;
+margin-right: 3px;
+}
+.shareoptiontext{
+font-size: 14px;
+font-weight: 500;
+}
+.sharebutton{
+    margin-top: 10px;
+    border: none;
+    padding: 7px;
+    border-radius: 5px;
+    background-color: green;
+    font-weight: 500;
+    margin-right: 20px;
+    color: white;
+cursor: pointer;
+}
+.shareImg {
+    max-width: 50%; /* Image ko container ke width ke anusaar adjust karein */
+    height: 50px; /* Aspect ratio ko maintain karne ke liye */
+  }
+  
