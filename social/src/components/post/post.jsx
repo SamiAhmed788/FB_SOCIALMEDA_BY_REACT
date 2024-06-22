@@ -4,6 +4,7 @@ import { MoreVert } from "@mui/icons-material";
 import axios from 'axios'; // Don't forget to import axios
 import { AuthContext } from "../../context/AuthContext";
 import {format } from "timeago.js"
+import { BaseUrl } from "../../../utills/domain";
 // import { userdata } from "../../dummydata/users";
 
 export function Posts({ data }) {
@@ -14,7 +15,7 @@ export function Posts({ data }) {
 
   const likeHandler = () => {
     try {
-      axios.put("http://localhost:5000/post/" + data._id + "/like", { userId: currentUser._id });
+      axios.put(`${BaseUrl}/post/${data._id}/like`, { userId: currentUser._id });
     } catch (err) {}
     setIsLiked(!isLiked);
     setLike(isLiked ? like - 1 : like + 1);
@@ -24,7 +25,7 @@ export function Posts({ data }) {
     const fetchUser = async () => {
 
       try {
-        const res = await axios.get(`http://localhost:5000/user?id=${data.userId}`);
+        const res = await axios.get(`${BaseUrl}/user?id=${data.userId}`);
         setUser(res.data);
       } catch (error) {
         console.error('Error fetching user:', error);

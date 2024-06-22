@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import { BaseUrl } from './utills/domain'
 
 // https://vitejs.dev/config/
 // export default defineConfig({
@@ -14,7 +15,7 @@ export default defineConfig({
      proxy: {
        // Proxy all requests starting with /api to the backend server
        '/api': {
-         target: 'http://localhost:5000', // Backend server URL
+         target: BaseUrl, // Backend server URL
          changeOrigin: true,
          rewrite: (path) => path.replace(/^\/api/, '/api')
        }

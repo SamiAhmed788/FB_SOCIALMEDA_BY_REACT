@@ -4,6 +4,7 @@ import { Share } from "../share/share";
 import { Posts } from "../post/post";
 import axios from "axios";
 import { AuthContext } from "../../context/AuthContext";
+import { BaseUrl } from "../../../utills/domain";
 
 export function Feedar({ username }) {
  const [posts, setPosts] = useState([]);
@@ -12,8 +13,8 @@ export function Feedar({ username }) {
  useEffect(() => {
   const fetchPosts = async () => {
     const res = username
-      ? await axios.get("http://localhost:5000/post/profile/"+ username)
-      : await axios.get("http://localhost:5000/post/timeline/" + user._id);
+      ? await axios.get(`${BaseUrl}/post/profile/${username}` )
+      : await axios.get(`${BaseUrl}/post/timeline/ ${user._id}`);
 
     setPosts(
       res.data.sort((p1, p2) => {

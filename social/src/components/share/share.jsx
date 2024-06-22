@@ -4,6 +4,7 @@ import { PermMedia,Label,Room, EmojiEmotions, Cancel } from "@mui/icons-material
 import { AuthContext } from "../../context/AuthContext";
 import axios from "axios";
 import useUploadImage from "../../../customhook/photos.jsx";
+import { BaseUrl } from "../../../utills/domain.jsx";
 export  function Share() {
 
     const { user } = useContext(AuthContext);
@@ -19,7 +20,7 @@ export  function Share() {
         Img: file? file : "",
       }
       try {
-        await axios.post("http://localhost:5000/post/", newPost);
+        await axios.post(`${BaseUrl}/post/`, newPost);
         window.location.reload()
       } catch (err) {
         console.log(err);

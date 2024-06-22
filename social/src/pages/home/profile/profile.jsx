@@ -10,6 +10,7 @@ import axios from 'axios'; // Import axios
 import { AuthContext } from "../../../context/AuthContext";
 import { EditNotifications } from "@mui/icons-material";
 import useUploadImage from "../../../../customhook/photos";
+import { BaseUrl } from "../../../../utills/domain";
 // import Modal from '@mui/material/Modal';
 
 function Profile() {
@@ -34,7 +35,7 @@ function Profile() {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/user?userName=${username}`);
+        const res = await axios.get(`${BaseUrl}/user?userName=${username}`);
         setUser(res.data);
       } catch (error) {
         console.error("User fetch karne mein error:", error);
@@ -57,8 +58,8 @@ function Profile() {
 
     };
     try {
-     await axios.put(`http://localhost:5000/user/${currentUser?._id}`, updatePost);
-      const getCurrentUser = await axios.get(`http://localhost:5000/user?id=${currentUser?._id}`);
+     await axios.put(`${BaseUrl}/user/${currentUser?._id}`, updatePost);
+      const getCurrentUser = await axios.get(`${BaseUrl}/user?id=${currentUser?._id}`);
       console.log("getCurrentUser", getCurrentUser);
      localStorage.setItem("user", JSON.stringify(getCurrentUser?.data))   
      navigate(`/`)

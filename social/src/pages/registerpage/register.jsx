@@ -3,6 +3,7 @@ import { useContext, useRef } from "react";
 import axios from "axios";
 
 import "./register.css";
+import { BaseUrl } from "../../../utills/domain";
 
 export default function Register() {
     const username = useRef();
@@ -27,7 +28,7 @@ export default function Register() {
                 password: password.current.value,
             };
             try {
-               await axios.post("http://localhost:5000/auth/signup", user);
+               await axios.post(`${BaseUrl}/auth/signup`, user);
                 navigate("/login");
             } catch (err) {
                 console.log(err);

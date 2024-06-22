@@ -5,6 +5,7 @@ import Online from "../online/online";
 import { AuthContext } from "../../context/AuthContext";
 import axios from "axios";
 import { Add, Remove } from "@mui/icons-material";
+import { BaseUrl } from "../../../utills/domain";
 
 export function Rightbar({  user }) {
   const [friends, setFriends] = useState([]);
@@ -17,7 +18,7 @@ export function Rightbar({  user }) {
     const getFriends = async () => {
       try {
         const friendList = await axios.get(
-          `http://localhost:5000/user/friends/${currentUser?._id}`
+          `${BaseUrl}/user/friends/${currentUser?._id}`
         );
         setFriends(friendList.data);
         console.log(friendList);
@@ -31,12 +32,12 @@ export function Rightbar({  user }) {
   const handleClick = async () => {
     try {
       if (followed) {
-        await axios.put(`http://localhost:5000/user/${user?._id}/unfollow`, {
+        await axios.put(`${BaseUrl}/user/${user?._id}/unfollow`, {
           userId: currentUser._id,
         });
         dispatch({ type: "UNFOLLOW", payload: user._id });
       } else {
-        await axios.put(`http://localhost:5000/user/${user?._id}/follow`, {
+        await axios.put(`${BaseUrl}/user/${user?._id}/follow`, {
           userId: currentUser._id,
         });
         dispatch({ type: "FOLLOW", payload: user._id });

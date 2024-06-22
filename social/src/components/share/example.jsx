@@ -2,6 +2,7 @@ import React, { useContext, useRef, useState } from "react"
 import "./share.css"
 import { PermMedia,Label,Room, EmojiEmotions } from "@mui/icons-material"
 import { AuthContext } from "../../context/AuthContext";
+import { BaseUrl } from "../../../utills/domain";
 export  function Share() {
 
     const { user } = useContext(AuthContext);
@@ -22,11 +23,11 @@ export  function Share() {
           newPost.img = fileName;
           console.log(newPost);
           try {
-            await axios.post("http://localhost:5000/api/upload/", data);
+            await axios.post(`${BaseUrl}/api/upload/`, data);
           } catch (err) {}
         }
         try {
-          await axios.post("http://localhost:5000/post/", newPost);
+          await axios.post(`${BaseUrl}/post/`, newPost);
           window.location.reload();
         } catch (err) {}
       };
