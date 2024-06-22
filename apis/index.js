@@ -14,6 +14,9 @@ app.use(cors({
   origin: 'http://your-frontend-url.com', // Replace with your frontend origin
   credentials: true,
 }));
+app.get("/", (req, res) => {
+  res.send("Hello world");
+});z
 // app.use((req, res, next) => {
 //   res.setHeader("Cross-Origin-Opener-Policy", "same-origin");
 //   res.setHeader("Cross-Origin-Embedder-Policy", "require-corp");
@@ -50,9 +53,7 @@ app.post("/api/upload", upload.single("file"), (req, res) => {
 });
 
 // Home Route
-app.get("/", (req, res) => {
-  res.send("Hello world");
-});
+
 
 // Database Connection
 dbConnection();
