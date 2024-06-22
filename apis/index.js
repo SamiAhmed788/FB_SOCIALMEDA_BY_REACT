@@ -14,43 +14,43 @@ app.use(cors({
   origin: 'http://your-frontend-url.com', // Replace with your frontend origin
   credentials: true,
 }));
-app.get("/", (req, res) => {
-  res.send("Hello world");
-});z
-// app.use((req, res, next) => {
-//   res.setHeader("Cross-Origin-Opener-Policy", "same-origin");
-//   res.setHeader("Cross-Origin-Embedder-Policy", "require-corp");
-//   next();
-// });
+app.use((req, res, next) => {
+  res.setHeader("Cross-Origin-Opener-Policy", "same-origin");
+  res.setHeader("Cross-Origin-Embedder-Policy", "require-corp");
+  next();
+});
 
 // Multer Configuration
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, "public/imagas");
-  },
-  filename: (req, file, cb) => {
-    cb(null, req.body.name);
-  },
-});
-const upload = multer({ storage: storage });
+// const storage = multer.diskStorage({
+//   destination: (req, file, cb) => {
+//     cb(null, "public/imagas");
+//   },
+//   filename: (req, file, cb) => {
+//     cb(null, req.body.name);
+//   },
+// });
+// const upload = multer({ storage: storage });
 
 // Routes
+app.get("/", (req, res) => {
+  res.send("Hello world");
+});
 app.use("/user", userRoute);
 app.use("/auth", authRoute);
 app.use("/post", PostRoute);
 
 // File Upload Route
-app.post("/api/upload", upload.single("file"), (req, res) => {
-  try {
-    if (!req.file) {
-      return res.status(400).json({ message: "No file uploaded" });
-    }
-    return res.status(200).json({ message: "File uploaded successfully" });
-  } catch (error) {
-    console.error(error);
-    return res.status(500).json({ message: "Internal server error" });
-  }
-});
+// app.post("/api/upload", upload.single("file"), (req, res) => {
+//   try {
+//     if (!req.file) {
+//       return res.status(400).json({ message: "No file uploaded" });
+//     }
+//     return res.status(200).json({ message: "File uploaded successfully" });
+//   } catch (error) {
+//     console.error(error);
+//     return res.status(500).json({ message: "Internal server error" });
+//   }
+// });
 
 // Home Route
 
