@@ -11,7 +11,7 @@ const app = express();
 // Middleware
 app.use(express.json());
 app.use(cors({  
-  origin: 'http://your-frontend-url.com', // Replace with your frontend origin
+  origin: 'https://fb-socialmeda-by-react-t6jt.vercel.app', // Replace with your frontend origin
   credentials: true,
 }));
 app.use((req, res, next) => {
