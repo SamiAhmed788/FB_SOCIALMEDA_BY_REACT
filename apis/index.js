@@ -11,12 +11,9 @@ const app = express();
 // Middleware
 app.use(express.json());
 app.use(cors({  
-  origin:'', // Replace with your frontend origin
+  origin: 'http://your-frontend-url.com', // Replace with your frontend origin
   credentials: true,
 }));
-app.get("/",(req,res)=>{
-  res.send("Hello world")
-})
 app.use((req, res, next) => {
   res.setHeader("Cross-Origin-Opener-Policy", "same-origin");
   res.setHeader("Cross-Origin-Embedder-Policy", "require-corp");
@@ -50,6 +47,11 @@ app.post("/api/upload", upload.single("file"), (req, res) => {
     console.error(error);
     return res.status(500).json({ message: "Internal server error" });
   }
+});
+
+// Home Route
+app.get("/", (req, res) => {
+  res.send("Hello world");
 });
 
 // Database Connection
