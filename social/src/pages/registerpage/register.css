@@ -42,3 +42,50 @@ color:#1877f2;
 }:focus{
     outline: none;
 }
+.lohgo{
+    display: none;
+    font-weight: 800;
+    font-size: 20px;
+color:#1877f2;
+margin-left: 130px;
+}
+@media screen and (min-width: 300px) and (max-width: 900px) {
+.Register{
+        width: 60vw;
+        height: 60vh;
+        display: flex;
+    margin: 0 auto;
+    margin-top: 15%;
+    }
+    .topbarCenter{
+        flex: 2;
+    }
+    .topbarRight{
+        flex: 5;
+        display: flex;
+        align-items: center;
+        justify-content:space-between ;
+        color:white;
+        
+    }
+    .topbarLeft{
+        flex: 2;
+    }
+
+.vig{
+    font-size: 18px;
+    font-weight:600;
+    margin-top: 20px;
+}
+
+.lohgo{
+    display: block;
+    font-weight: 800;
+    font-size: 20px;
+color:#1877f2;
+margin-left: 130px;
+}
+.Registerright{
+    display: none;
+}
+  }

@@ -32,9 +32,10 @@ export default function Login() {
                     <span style={{ fontSize: "20px" }}>Connect with friends all around the world <br />at our social media</span>
                 </div>
                 <div className="loginleft">
+                <h2  className="lohgo">Social Media</h2>
                     <br />
                     <div className="loginbox">
-                        
+
                         <input ref={email}  className="email" type="text" placeholder="Email or Phone Number" />
                         <input minLength="6" ref={Password} style={{ marginTop: '14px' }} className="email" type="password" placeholder="Password" />
                         <button onClick={Handlerclick} style={{ width: "390px", height: "50px", margin: "0 auto", marginTop: "14px", fontWeight: "700" }} className="btn btn-primary">{isFetching ? <CircularProgress />  : "Log In"}</button>

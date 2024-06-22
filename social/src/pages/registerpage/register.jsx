@@ -43,6 +43,7 @@ export default function Register() {
                     <span style={{ fontSize: "20px" }}>Connect with friends all around the world <br />at our social media</span>
                 </div>
                 <div className="Registerleft">
+                <h2  className="lohgo">Social Media</h2>
                     <br />
                     <form>
                         <div className="Registerbox">
