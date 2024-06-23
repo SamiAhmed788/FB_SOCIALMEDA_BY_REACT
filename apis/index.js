@@ -10,15 +10,17 @@ const app = express();
 
 // Middleware
 app.use(express.json());
-app.use(cors({  
-  origin: 'https://fb-socialmeda-by-react-t6jt.vercel.app', // Allow requests from this origin
+app.use(cors({
+  origin: 'https://fb-socialmeda-by-react.vercel.app', // Allow requests from this origin
   credentials: true, // Allow cookies to be sent with the requests
 }));
-// app.use((req, res, next) => {
-//   res.setHeader("Cross-Origin-Opener-Policy", "same-origin");
-//   res.setHeader("Cross-Origin-Embedder-Policy", "require-corp");
-//   next();
-// });
+
+// Additional headers
+app.use((req, res, next) => {
+  res.setHeader("Cross-Origin-Opener-Policy", "same-origin");
+  res.setHeader("Cross-Origin-Embedder-Policy", "require-corp");
+  next();
+});
 
 // Routes
 app.get("/", (req, res) => {
@@ -27,6 +29,13 @@ app.get("/", (req, res) => {
 app.use("/user", userRoute);
 app.use("/auth", authRoute);
 app.use("/post", PostRoute);
+
+// Middleware to set CORS headers explicitly
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "https://fb-socialmeda-by-react.vercel.app");
+  res.setHeader("Access-Control-Allow-Credentials", "true");
+  next();
+});
 
 // Database Connection
 dbConnection();
