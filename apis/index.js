@@ -11,7 +11,7 @@ const app = express();
 // Middleware
 app.use(express.json());
 app.use(cors({  
-  origin: 'https://fb-socialmeda-by-react-t6jt.vercel.app', // Allow requests from this origin
+  origin: 'https://fb-socialmeda-by-react-t6jt.vercel.app/', // Allow requests from this origin
   credentials: true, // Allow cookies to be sent with the requests
 }));
 app.use((req, res, next) => {
