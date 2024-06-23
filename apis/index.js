@@ -14,11 +14,11 @@ app.use(cors({
   origin: 'https://fb-socialmeda-by-react-t6jt.vercel.app', // Allow requests from this origin
   credentials: true, // Allow cookies to be sent with the requests
 }));
-app.use((req, res, next) => {
-  res.setHeader("Cross-Origin-Opener-Policy", "same-origin");
-  res.setHeader("Cross-Origin-Embedder-Policy", "require-corp");
-  next();
-});
+// app.use((req, res, next) => {
+//   res.setHeader("Cross-Origin-Opener-Policy", "same-origin");
+//   res.setHeader("Cross-Origin-Embedder-Policy", "require-corp");
+//   next();
+// });
 
 // Routes
 app.get("/", (req, res) => {
